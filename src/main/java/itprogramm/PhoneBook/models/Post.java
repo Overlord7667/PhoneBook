@@ -6,13 +6,14 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class List {
+public class Post {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String last_name, first_name, type_number,phone_number, town, street, number_home;
+    private String last_name, first_name, surname, type_number, number;
+    private int views;
 
     public Long getId() {
         return id;
@@ -38,6 +39,14 @@ public class List {
         this.first_name = first_name;
     }
 
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
     public String getType_number() {
         return type_number;
     }
@@ -46,35 +55,32 @@ public class List {
         this.type_number = type_number;
     }
 
-    public String getPhone_number() {
-        return phone_number;
+    public String getNumber() {
+        return number;
     }
 
-    public void setPhone_number(String phone_number) {
-        this.phone_number = phone_number;
+    public void setNumber(String number) {
+        this.number = number;
     }
 
-    public String getTown() {
-        return town;
+
+
+    public int getViews() {
+        return views;
     }
 
-    public void setTown(String town) {
-        this.town = town;
+    public void setViews(int views) {
+        this.views = views;
     }
 
-    public String getStreet() {
-        return street;
+    public Post() {
     }
 
-    public void setStreet(String street) {
-        this.street = street;
-    }
-
-    public String getNumber_home() {
-        return number_home;
-    }
-
-    public void setNumber_home(String number_home) {
-        this.number_home = number_home;
+    public Post(String last_name, String first_name, String surname, String type_number, String number) {
+        this.last_name = last_name;
+        this.first_name = first_name;
+        this.surname = surname;
+        this.type_number = type_number;
+        this.number = number;
     }
 }

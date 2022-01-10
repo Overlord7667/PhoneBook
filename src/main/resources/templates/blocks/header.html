@@ -1,12 +1,15 @@
 <div th:fragment="header">
-    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-        <header class="mb-auto">
-            <div>
-                <h3 class="float-md-start mb-0">Phone Book</h3>
-                <nav class="nav nav-masthead justify-content-center float-md-end">
-                    <a class="nav-link active" aria-current="page" href="/">Home</a>
-                </nav>
-            </div>
-        </header>
+    <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
+        <h5 class="my-0 mr-md-auto front-weight-normal">Phone Book</h5>
+        <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+        </a>
+
+        <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+            <a class="btn btn-lg bg-info" href="/">Главная</a>
+            <a class="btn btn-lg bg-info" href="/blog">Список контактов</a>
+            <a class="btn btn-lg bg-info" href="/blog/add">Добавить контакт</a>
+            <a class="btn btn-lg bg-info" href="/about">Про нас</a>
+        </nav>
+        <nav class="nav nav-masthead justify-content-center float-md-end"></nav>
     </div>
-</div>
+</div>>
