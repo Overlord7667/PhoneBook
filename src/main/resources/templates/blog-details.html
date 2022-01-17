@@ -16,8 +16,10 @@
             <p> Имя: <a th:text="${el.first_name}"></a></p>
             <p> Отчество: <a th:text="${el.surname}"></a></p>
             <p> Тип номера: <a th:text="${el.type_number}"><p/>
-            <p></a>Номер: <a th:text="${el.number}"></a></p>
-            <p><b>Просмотры: </b><span th:text="${el.views}"/></p>
+            <p> Номер: <a th:text="${el.number}"></a></p>
+            <p> Город: <a th:text="${el.town}"></a></p>
+            <p> Улица: <a th:text="${el.streets}"></a></p>
+            <p> Номер дома: <a th:text="${el.house_number}"></a></p>
             <a th:href=" '/blog/' + ${el.id} + '/edit'" class="btn btn-warning">Редактировать</a><br><br>
             <form th:action="'/blog/'+ ${el.id} + '/remove'" method="post">
                 <button class="btn btn-warning" type="submit">Удалить</button>

@@ -33,8 +33,9 @@ public class ContactsController {
 
     @PostMapping("/blog/add")
     public String blogPostAdd(@RequestParam String last_name, @RequestParam String first_name,
-                              @RequestParam String surname, @RequestParam String type_number, @RequestParam String number, Model model){
-        Post post = new Post(last_name, first_name, surname, type_number, number);
+                              @RequestParam String surname, @RequestParam String type_number, @RequestParam String number,
+                              @RequestParam String town, @RequestParam String streets, @RequestParam String house_number, Model model){
+        Post post = new Post(last_name, first_name, surname, type_number, number, town, streets, house_number);
         postRepository.save(post);
         return "redirect:/blog";
     }
@@ -66,13 +67,17 @@ public class ContactsController {
     @PostMapping("/blog/{id}/edit")
     public String blogPostUpdate(@PathVariable(value = "id")long id, @RequestParam String last_name,
                                  @RequestParam String first_name, @RequestParam String surname,
-                                 @RequestParam String type_number, @RequestParam String number, Model model){
+                                 @RequestParam String type_number, @RequestParam String number,
+                                 @RequestParam String town, @RequestParam String streets, @RequestParam String house_number, Model model){
         Post post = postRepository.findById(id).orElseThrow();
         post.setLast_name(last_name);
         post.setFirst_name(first_name);
         post.setSurname(surname);
         post.setType_number(type_number);
         post.setNumber(number);
+        post.setTown(town);
+        post.setStreets(streets);
+        post.setHouse_number(house_number);
         postRepository.save(post);
         return "redirect:/blog";
     }
